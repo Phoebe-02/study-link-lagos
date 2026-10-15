@@ -15,6 +15,8 @@ const spots = [
 const spotList   = document.getElementById("spot-list");
 const resultCount = document.getElementById("result-count");
 const emptyState = document.getElementById("empty-state");
+// Remembers which spots are saved (by their id)
+const savedIds = [];
 
 // ---------- 3. HELPERS ----------
 function formatPrice(price) {
@@ -23,6 +25,8 @@ function formatPrice(price) {
 
 // Builds the HTML for ONE card
 function createSpotCard(spot) {
+  const isSaved = savedIds.includes(spot.id);
+
   const amenityItems = spot.amenities
     .map(function (item) { return "<li>" + item + "</li>"; })
     .join("");
@@ -34,8 +38,8 @@ function createSpotCard(spot) {
         <p class="spot-meta">${spot.area} &middot; ${formatPrice(spot.price)}</p>
         <p class="spot-desc">${spot.description}</p>
         <ul class="amenities" aria-label="Amenities">${amenityItems}</ul>
-        <button type="button" class="btn" aria-pressed="false" data-id="${spot.id}">
-          Save spot
+        <button type="button" class="btn" aria-pressed="${isSaved}" data-id="${spot.id}">
+          ${isSaved ? "Saved" : "Save spot"}
         </button>
       </article>
     </li>
@@ -56,3 +60,42 @@ renderSpots(spots);
 // ---------- 5. TODO (your Task 1.2 interactivity) ----------
 // a) Make the search box + area dropdown + checkboxes filter the list
 // b) Make the "Save spot" button toggle on/off (and flip aria-pressed)
+
+
+// Stop the form from reloading the page when Enter is pressed
+const filterForm = document.getElementById("filter-form");
+filterForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+});
+
+// Filter the list as the user types
+const searchInput = document.getElementById("search");
+
+searchInput.addEventListener("input", function () {
+  const text = searchInput.value.trim().toLowerCase();
+
+  const filtered = spots.filter(function (spot) {
+    return spot.name.toLowerCase().includes(text);
+  });
+
+  renderSpots(filtered);
+});
+
+
+// Save / unsave a spot when its button is clicked
+spotList.addEventListener("click", function (event) {
+  const button = event.target.closest("button[data-id]");
+  if (!button) return;
+
+  const id = Number(button.dataset.id);
+
+  if (savedIds.includes(id)) {
+    savedIds.splice(savedIds.indexOf(id), 1);   // remove it
+  } else {
+    savedIds.push(id);                          // add it
+  }
+
+  const isSaved = savedIds.includes(id);
+  button.setAttribute("aria-pressed", isSaved);
+  button.textContent = isSaved ? "Saved" : "Save spot";
+});
