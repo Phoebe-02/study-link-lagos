@@ -1,1 +1,1 @@
-# studylink-ibadan
+# studylink-lagos
