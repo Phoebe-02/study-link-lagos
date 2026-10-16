@@ -1,3 +1,4 @@
+**Documents:** [Idea one-pager](docs/one-pager.md) | [Work plan](docs/work-plan.md) | [Screenshots](screenshots/)
 # Study Link Lagos
 
 A study spot finder for students in Lagos. Browse places to study, search by name, and save your favourites.
