@@ -42,13 +42,15 @@ Each card has a "Save spot" button. Clicking it adds or removes that spot's id f
 
 All study spots are made-up sample data.
 
-## Known limitations
+   ### 3. Area and amenity filters
+   The area dropdown and the Wi-Fi, Power and Quiet checkboxes work together with the search box. A single `applyFilters()` function checks all of them each time one changes, and keeps only the spots that match every filter.
+
+   ## Known limitations
 
 - Saved spots reset when the page is refreshed.
-- Area and amenity filters are not working yet.
-
+  
 ## What's next
 
-- Make the area dropdown and amenity checkboxes filter the list.
 - Load the data from a JSON file or public API.
 - Keep saved spots after refresh.
+- Rebuild the interface from reusable components (Week 2).
