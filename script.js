@@ -68,17 +68,38 @@ filterForm.addEventListener("submit", function (event) {
   event.preventDefault();
 });
 
-// Filter the list as the user types
+// Grab the filter controls
 const searchInput = document.getElementById("search");
+const areaSelect = document.getElementById("area");
+const amenityBoxes = document.querySelectorAll('input[name="amenity"]');
 
-searchInput.addEventListener("input", function () {
+// Check every filter at once and redraw the list
+function applyFilters() {
   const text = searchInput.value.trim().toLowerCase();
+  const area = areaSelect.value;
+
+  // Collect the names of the ticked boxes, e.g. ["Wi-Fi", "Power"]
+  const wanted = Array.from(amenityBoxes)
+    .filter(function (box) { return box.checked; })
+    .map(function (box) { return box.value; });
 
   const filtered = spots.filter(function (spot) {
-    return spot.name.toLowerCase().includes(text);
+    const matchesName = spot.name.toLowerCase().includes(text);
+    const matchesArea = area === "all" || spot.area === area;
+    const matchesAmenities = wanted.every(function (item) {
+      return spot.amenities.includes(item);
+    });
+    return matchesName && matchesArea && matchesAmenities;
   });
 
   renderSpots(filtered);
+}
+
+// Run it whenever any filter changes
+searchInput.addEventListener("input", applyFilters);
+areaSelect.addEventListener("change", applyFilters);
+amenityBoxes.forEach(function (box) {
+  box.addEventListener("change", applyFilters);
 });
 
 
