@@ -3,7 +3,7 @@
 
 A study spot finder for students in Lagos. Browse places to study, search by name, and save your favourites.
 
-**Live site:** [paste your Netlify link here]
+**Live site:** [https://cool-hummingbird-726314.netlify.app/]
 
 ## The problem
 
@@ -13,14 +13,15 @@ Students in Lagos waste time and money looking for a quiet place to study with p
 
 University students in Lagos.
 
-## Tech stack
-
-HTML, CSS and JavaScript (no frameworks). Hosted on Netlify.
+## Tech Stack
+HTML, CSS, JavaScript and React (built with Vite). Hosted on Netlify. Week 1 used plain JavaScript and is preserved in the `week-1` tag.
 
 ## How to run it
 
-1. Download or clone this repo.
-2. Open `index.html` in your browser. No install needed.
+1. Install Node.js (LTS version).
+2. Download or clone this repo.
+3. In the project folder, run `npm install`, then `npm run dev`.
+4. Open the link it prints (usually http://localhost:5173).
 
 ## Features and how they work
 
@@ -48,9 +49,28 @@ All study spots are made-up sample data.
    ## Known limitations
 
 - Saved spots reset when the page is refreshed.
+
+  ## Week 2: Components and data
+
+### Component map
+- **App**: fetches the data, holds the state (spots, filters, saved spots) and passes it down
+  - **Header**: title, tagline and navigation
+  - **FilterBar**: the filter panel
+    - **SearchBar**: the search input
+  - **SpotList**: the grid of cards
+    - **SpotCard**: one study spot with a save button
+  - **StatusMessage**: loading, error (with retry) and empty messages
+
+### Data
+The app fetches `spots.json` (a mock API stored in the `public` folder) when it loads. It shows a loading message while waiting, an error message with a "Try again" button if the request fails, and an empty-state message when no spots match. No API keys are used.
+
+### Feedback
+My Week 1 idea was given a go-ahead with no feedback, so there was nothing to change.
+
+### Issue log
+See [docs/issue-log.md](docs/issue-log.md).
   
 ## What's next
 
-- Load the data from a JSON file or public API.
-- Keep saved spots after refresh.
-- Rebuild the interface from reusable components (Week 2).
+- Keep saved spots after refresh as Week 3 item.
+  
