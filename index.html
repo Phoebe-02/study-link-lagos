@@ -1,74 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Study Link Lagos | Find a place to study</title>
-  <meta name="description" content="Find quiet, affordable study spots in Lagos with Wi-Fi and power.">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <a class="skip-link" href="#results">Skip to study spots</a>
-
-  <header class="site-header">
-    <div class="wrap">
-      <h1>Study Link Lagos</h1>
-      <p class="tagline">Find a quiet place to study, with power and Wi-Fi.</p>
-      <nav aria-label="Main">
-        <ul class="nav-list">
-          <li><a href="#results">Spots</a></li>
-          <li><a href="#filters">Filters</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section id="filters" aria-labelledby="filters-title" class="filters">
-      <h2 id="filters-title">Find a spot</h2>
-      <form id="filter-form" novalidate>
-        <div class="field">
-          <label for="search">Search by name</label>
-          <input type="search" id="search" name="search" placeholder="e.g. library">
-        </div>
-
-        <div class="field">
-          <label for="area">Area</label>
-          <select id="area" name="area">
-            <option value="all">All areas</option>
-            <option value="Yaba">Yaba</option>
-            <option value="Ikeja">Ikeja</option>
-            <option value="Lekki">Lekki</option>
-            <option value="Surulere">Surulere</option>
-            <option value="Victoria Island">Victoria Island</option>
-          </select>
-        </div>
-
-        <fieldset class="field checks">
-          <legend>Must have</legend>
-          <label><input type="checkbox" name="amenity" value="Wi-Fi"> Wi-Fi</label>
-          <label><input type="checkbox" name="amenity" value="Power"> Power</label>
-          <label><input type="checkbox" name="amenity" value="Quiet"> Quiet</label>
-        </fieldset>
-      </form>
-    </section>
-
-    <section id="results" aria-labelledby="results-title">
-      <h2 id="results-title">Study spots</h2>
-      <p id="result-count" aria-live="polite"></p>
-      <ul id="spot-list" class="spot-grid"></ul>
-      <p id="empty-state" class="empty" hidden>
-        No spots match your search. Try a different area or remove a filter.
-      </p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>Study Link Lagos is a demo project. All spots shown are sample data.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Link Lagos</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

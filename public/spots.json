@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Yabatech Corner Reading Room", "area": "Yaba", "price": 0, "amenities": ["Wi-Fi", "Quiet"], "description": "A calm reading room with long tables and plenty of natural light." },
+  { "id": 2, "name": "Lagoon Side Study Hub", "area": "Lekki", "price": 2500, "amenities": ["Wi-Fi", "Power", "Quiet"], "description": "Air-conditioned co-working desks with backup power and a quiet zone." },
+  { "id": 3, "name": "Ikeja Central Library Annex", "area": "Ikeja", "price": 0, "amenities": ["Quiet", "Power"], "description": "Free public library annex with silent study carrels." },
+  { "id": 4, "name": "Surulere Study Cafe", "area": "Surulere", "price": 1500, "amenities": ["Wi-Fi", "Power"], "description": "Cafe with strong Wi-Fi and plenty of sockets. A bit busy at lunch." },
+  { "id": 5, "name": "VI Focus Desk", "area": "Victoria Island", "price": 4000, "amenities": ["Wi-Fi", "Power", "Quiet"], "description": "Private desks, steady power, and a quiet floor for exam prep." },
+  { "id": 6, "name": "Yaba Tech Co-Study", "area": "Yaba", "price": 2000, "amenities": ["Wi-Fi", "Power"], "description": "Shared tables near the tech cluster, popular with students." },
+  { "id": 7, "name": "Lekki Garden Reading Spot", "area": "Lekki", "price": 1000, "amenities": ["Quiet"], "description": "Outdoor shaded seating, best in the morning before the heat." },
+  { "id": 8, "name": "Ikeja Night Owl Space", "area": "Ikeja", "price": 3000, "amenities": ["Wi-Fi", "Power"], "description": "Open late, good for last-minute revision sessions." }
+]
