@@ -1,7 +1,7 @@
 import SearchBar from "./SearchBar";
+import { FILTERS } from "../filters";
 
 const AREAS = ["Yaba", "Ikeja", "Lekki", "Surulere", "Victoria Island"];
-const AMENITIES = ["Wi-Fi", "Power", "Quiet"];
 
 function FilterBar({
   search,
@@ -34,15 +34,15 @@ function FilterBar({
 
         <fieldset className="field checks">
           <legend>Must have</legend>
-          {AMENITIES.map(function (name) {
+          {FILTERS.map(function (filter) {
             return (
-              <label key={name}>
+              <label key={filter.key}>
                 <input
                   type="checkbox"
-                  checked={amenities.includes(name)}
-                  onChange={function () { onToggleAmenity(name); }}
+                  checked={amenities.includes(filter.key)}
+                  onChange={function () { onToggleAmenity(filter.key); }}
                 />{" "}
-                {name}
+                {filter.label}
               </label>
             );
           })}

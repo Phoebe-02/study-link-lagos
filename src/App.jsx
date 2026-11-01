@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import FilterBar from "./components/FilterBar";
 import SpotList from "./components/SpotList";
 import StatusMessage from "./components/StatusMessage";
+import { FILTERS } from "./filters";
 
 function App() {
   // ----- Data and status -----
@@ -12,7 +13,7 @@ function App() {
   // ----- Filters and saved spots -----
   const [search, setSearch] = useState("");
   const [area, setArea] = useState("all");
-  const [amenities, setAmenities] = useState([]);
+  const [activeFilters, setActiveFilters] = useState([]); // keys like "freeWifi"
   const [savedIds, setSavedIds] = useState([]);
 
   function loadSpots() {
@@ -36,11 +37,11 @@ function App() {
   }, []);
 
   // ----- Event handlers (passed down to child components) -----
-  function toggleAmenity(name) {
-    setAmenities(function (current) {
-      return current.includes(name)
-        ? current.filter(function (item) { return item !== name; })
-        : [...current, name];
+  function toggleFilter(key) {
+    setActiveFilters(function (current) {
+      return current.includes(key)
+        ? current.filter(function (item) { return item !== key; })
+        : [...current, key];
     });
   }
 
@@ -58,10 +59,11 @@ function App() {
   const visibleSpots = spots.filter(function (spot) {
     const matchesName = spot.name.toLowerCase().includes(text);
     const matchesArea = area === "all" || spot.area === area;
-    const matchesAmenities = amenities.every(function (item) {
-      return spot.amenities.includes(item);
+    const passesFilters = activeFilters.every(function (key) {
+      const filter = FILTERS.find(function (item) { return item.key === key; });
+      return filter.test(spot);
     });
-    return matchesName && matchesArea && matchesAmenities;
+    return matchesName && matchesArea && passesFilters;
   });
 
   const emptyMessage =
@@ -80,8 +82,8 @@ function App() {
           onSearchChange={setSearch}
           area={area}
           onAreaChange={setArea}
-          amenities={amenities}
-          onToggleAmenity={toggleAmenity}
+          amenities={activeFilters}
+          onToggleAmenity={toggleFilter}
         />
 
         <section id="results" aria-labelledby="results-title">
@@ -112,7 +114,10 @@ function App() {
 
       <footer className="site-footer">
         <div className="wrap">
-          <p>Study Link Lagos is a demo project. All spots shown are sample data.</p>
+          <p>
+            Study Link Lagos is a demo project. Spots, ratings, reviews and
+            distances are sample data, and photos are for illustration only.
+          </p>
         </div>
       </footer>
     </>

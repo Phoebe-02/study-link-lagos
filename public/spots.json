@@ -1,10 +1,170 @@
 [
-  { "id": 1, "name": "Yabatech Corner Reading Room", "area": "Yaba", "price": 0, "amenities": ["Wi-Fi", "Quiet"], "description": "A calm reading room with long tables and plenty of natural light." },
-  { "id": 2, "name": "Lagoon Side Study Hub", "area": "Lekki", "price": 2500, "amenities": ["Wi-Fi", "Power", "Quiet"], "description": "Air-conditioned co-working desks with backup power and a quiet zone." },
-  { "id": 3, "name": "Ikeja Central Library Annex", "area": "Ikeja", "price": 0, "amenities": ["Quiet", "Power"], "description": "Free public library annex with silent study carrels." },
-  { "id": 4, "name": "Surulere Study Cafe", "area": "Surulere", "price": 1500, "amenities": ["Wi-Fi", "Power"], "description": "Cafe with strong Wi-Fi and plenty of sockets. A bit busy at lunch." },
-  { "id": 5, "name": "VI Focus Desk", "area": "Victoria Island", "price": 4000, "amenities": ["Wi-Fi", "Power", "Quiet"], "description": "Private desks, steady power, and a quiet floor for exam prep." },
-  { "id": 6, "name": "Yaba Tech Co-Study", "area": "Yaba", "price": 2000, "amenities": ["Wi-Fi", "Power"], "description": "Shared tables near the tech cluster, popular with students." },
-  { "id": 7, "name": "Lekki Garden Reading Spot", "area": "Lekki", "price": 1000, "amenities": ["Quiet"], "description": "Outdoor shaded seating, best in the morning before the heat." },
-  { "id": 8, "name": "Ikeja Night Owl Space", "area": "Ikeja", "price": 3000, "amenities": ["Wi-Fi", "Power"], "description": "Open late, good for last-minute revision sessions." }
+  {
+    "id": 1,
+    "name": "Corner Reading Room",
+    "address": "14 Palm Close, Yaba",
+    "area": "Yaba",
+    "distanceKm": 1.2,
+    "price": 0,
+    "wifi": "free",
+    "power": { "sources": "Grid + generator", "reliability": "Reliable", "hasBackup": true },
+    "seating": "Long tables, 40 seats",
+    "hours": "Mon-Sat, 8am-8pm",
+    "environment": "Quiet",
+    "amenities": ["Restrooms", "Water dispenser"],
+    "image": "/images/corner-reading-room.jpg",
+    "imageAlt": "Long study tables in a bright reading room",
+    "ratings": { "overall": 4.5, "count": 38, "cleanliness": 4.5, "internet": 3.8, "electricity": 4.6, "noise": 4.8, "comfort": 4.2, "affordability": 5.0 },
+    "reviews": [
+      { "name": "Amaka", "date": "2026-09-14", "text": "Free and properly quiet. The internet slows down in the afternoon, but the power never dropped." },
+      { "name": "Tunde", "date": "2026-08-30", "text": "Great for exam season. Arrive early because the good seats go by 10am." }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Lagoon Side Study Hub",
+    "address": "7 Marina Crescent, Lekki",
+    "area": "Lekki",
+    "distanceKm": 14.8,
+    "price": 2500,
+    "wifi": "free",
+    "power": { "sources": "Grid + solar + generator", "reliability": "Very reliable", "hasBackup": true },
+    "seating": "Private desks and booths, 60 seats",
+    "hours": "Daily, 7am-10pm",
+    "environment": "Quiet",
+    "amenities": ["Air conditioning", "Printing", "Coffee bar", "Restrooms"],
+    "image": "/images/lagoon-side-hub.jpg",
+    "imageAlt": "Modern co-working desks beside large windows",
+    "ratings": { "overall": 4.6, "count": 112, "cleanliness": 4.9, "internet": 4.8, "electricity": 4.9, "noise": 4.7, "comfort": 4.8, "affordability": 3.2 },
+    "reviews": [
+      { "name": "Chidi", "date": "2026-10-02", "text": "Fast Wi-Fi, and the generator kicks in so quickly I never noticed a blackout. Pricey but worth it on deadline days." },
+      { "name": "Zainab", "date": "2026-09-20", "text": "Spotless and the chairs are comfortable. It gets full on weekends." }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Ikeja Library Annex",
+    "address": "3 Allen Close, Ikeja",
+    "area": "Ikeja",
+    "distanceKm": 9.6,
+    "price": 0,
+    "wifi": "none",
+    "power": { "sources": "Grid only", "reliability": "Fair", "hasBackup": false },
+    "seating": "Silent carrels, 24 seats",
+    "hours": "Mon-Fri, 9am-5pm",
+    "environment": "Quiet",
+    "amenities": ["Restrooms", "Lockers"],
+    "image": "/images/ikeja-library-annex.jpg",
+    "imageAlt": "Rows of quiet study carrels in a library",
+    "ratings": { "overall": 3.6, "count": 21, "cleanliness": 4.0, "internet": 1.0, "electricity": 3.0, "noise": 4.9, "comfort": 3.6, "affordability": 5.0 },
+    "reviews": [
+      { "name": "Ife", "date": "2026-09-05", "text": "Dead silent and free. Bring your own data because there is no Wi-Fi, and the power goes off sometimes." },
+      { "name": "Segun", "date": "2026-07-22", "text": "It closes early, so no evening sessions." }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Surulere Study Cafe",
+    "address": "22 Cedar Lane, Surulere",
+    "area": "Surulere",
+    "distanceKm": 5.3,
+    "price": 1500,
+    "wifi": "paid",
+    "power": { "sources": "Grid + generator", "reliability": "Reliable", "hasBackup": true },
+    "seating": "Cafe tables and sofas, 30 seats",
+    "hours": "Daily, 8am-9pm",
+    "environment": "Lively",
+    "amenities": ["Coffee and snacks", "Air conditioning", "Restrooms"],
+    "image": "/images/surulere-cafe.jpg",
+    "imageAlt": "Students working on laptops at cafe tables",
+    "ratings": { "overall": 3.9, "count": 64, "cleanliness": 4.2, "internet": 3.9, "electricity": 4.4, "noise": 2.8, "comfort": 4.5, "affordability": 3.8 },
+    "reviews": [
+      { "name": "Bisi", "date": "2026-10-10", "text": "Sockets everywhere and the coffee is good, but lunchtime is loud." },
+      { "name": "Kola", "date": "2026-09-18", "text": "The Wi-Fi is paid, but the code lasts the whole day." }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "VI Focus Desk",
+    "address": "5 Harbour Court, Victoria Island",
+    "area": "Victoria Island",
+    "distanceKm": 12.1,
+    "price": 4000,
+    "wifi": "free",
+    "power": { "sources": "Grid + solar + generator", "reliability": "Very reliable", "hasBackup": true },
+    "seating": "Private desks and pods, 45 seats",
+    "hours": "Mon-Sat, 7am-11pm",
+    "environment": "Quiet",
+    "amenities": ["Air conditioning", "Meeting pods", "Printing", "Coffee bar"],
+    "image": "/images/vi-focus-desk.jpg",
+    "imageAlt": "Private desks with lamps in a calm workspace",
+    "ratings": { "overall": 4.4, "count": 87, "cleanliness": 4.8, "internet": 4.7, "electricity": 4.9, "noise": 4.6, "comfort": 4.7, "affordability": 2.5 },
+    "reviews": [
+      { "name": "Dami", "date": "2026-10-08", "text": "The best electricity of any place I have tried. The price is the only downside." },
+      { "name": "Halima", "date": "2026-09-27", "text": "The quiet floor is truly quiet, and the booth seats are comfortable for long sessions." }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Yaba Tech Co-Study",
+    "address": "31 Tech Close, Yaba",
+    "area": "Yaba",
+    "distanceKm": 2.0,
+    "price": 2000,
+    "wifi": "free",
+    "power": { "sources": "Grid + generator", "reliability": "Reliable", "hasBackup": true },
+    "seating": "Shared tables, 50 seats",
+    "hours": "Daily, 8am-10pm",
+    "environment": "Moderate",
+    "amenities": ["Air conditioning", "Printing", "Restrooms"],
+    "image": "/images/yaba-co-study.jpg",
+    "imageAlt": "Shared tables where students study together",
+    "ratings": { "overall": 4.1, "count": 73, "cleanliness": 4.0, "internet": 4.4, "electricity": 4.3, "noise": 3.4, "comfort": 4.0, "affordability": 4.2 },
+    "reviews": [
+      { "name": "Emeka", "date": "2026-10-04", "text": "Good internet and people around to ask for help. Not silent, but focused." },
+      { "name": "Ruth", "date": "2026-09-11", "text": "Fair price and decent chairs. It gets noisy during events." }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Lekki Garden Reading Spot",
+    "address": "9 Garden Walk, Lekki",
+    "area": "Lekki",
+    "distanceKm": 15.5,
+    "price": 1000,
+    "wifi": "none",
+    "power": { "sources": "Solar", "reliability": "Fair", "hasBackup": true },
+    "seating": "Shaded outdoor benches, 20 seats",
+    "hours": "Daily, 7am-5pm",
+    "environment": "Quiet",
+    "amenities": ["Water refill", "Shaded seating"],
+    "image": "/images/lekki-garden.jpg",
+    "imageAlt": "Shaded outdoor benches in a green garden",
+    "ratings": { "overall": 3.5, "count": 29, "cleanliness": 4.3, "internet": 1.0, "electricity": 3.2, "noise": 4.1, "comfort": 3.5, "affordability": 4.6 },
+    "reviews": [
+      { "name": "Joy", "date": "2026-09-29", "text": "Lovely in the morning. There is no Wi-Fi, so download your notes first." },
+      { "name": "Peter", "date": "2026-08-15", "text": "The sockets only work when the sun is out." }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Ikeja Night Owl Space",
+    "address": "18 Orchard Street, Ikeja",
+    "area": "Ikeja",
+    "distanceKm": 8.9,
+    "price": 3000,
+    "wifi": "paid",
+    "power": { "sources": "Grid + generator", "reliability": "Reliable", "hasBackup": true },
+    "seating": "Open desks and armchairs, 35 seats",
+    "hours": "Daily, 4pm-2am",
+    "environment": "Moderate",
+    "amenities": ["Air conditioning", "Snacks", "Restrooms"],
+    "image": "/images/night-owl-space.jpg",
+    "imageAlt": "Desks and armchairs lit softly for late-night study",
+    "ratings": { "overall": 4.0, "count": 51, "cleanliness": 3.9, "internet": 4.0, "electricity": 4.5, "noise": 3.6, "comfort": 4.4, "affordability": 3.4 },
+    "reviews": [
+      { "name": "Obinna", "date": "2026-10-12", "text": "It is open when everywhere else is shut, which saved me the night before an exam." },
+      { "name": "Mercy", "date": "2026-09-03", "text": "The Wi-Fi costs extra but is fast. The armchairs are comfortable." }
+    ]
+  }
 ]
