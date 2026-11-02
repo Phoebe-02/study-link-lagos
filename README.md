@@ -11,7 +11,7 @@ Students in Lagos waste time and money looking for a quiet place to study with p
 
 ## Who it's for
 
-University students in Lagos.
+University students in Lagos or any students around Lagos, remote workers, freelancers and people who need somewhere quiet, comfortable to get workdone.
 
 ## Tech Stack
 HTML, CSS, JavaScript and React (built with Vite). Hosted on Netlify. Week 1 used plain JavaScript and is preserved in the `week-1` tag.
@@ -65,12 +65,27 @@ All study spots are made-up sample data.
 The app fetches `spots.json` (a mock API stored in the `public` folder) when it loads. It shows a loading message while waiting, an error message with a "Try again" button if the request fails, and an empty-state message when no spots match. No API keys are used.
 
 ### Feedback
-My Week 1 idea was given a go-ahead with no feedback, so there was nothing to change.
+ -Palette clashing and the site feels too basic(user experience).  I changed it to a black, white and grey palette with one blue accent, added photos, and expanded each spot with address, distance, Wi-Fi type, power, seating, hours, noise level and ratings.
 
 ### Issue log
 See [docs/issue-log.md](docs/issue-log.md).
+
+ ## Photo Credits and data notes
+   - All places, ratings, reviews and distances are sample data. Photos are illustrative stock images.
+   - Photos: corner-reading-room.jpg by Arthur Tseng on Unsplash
+             lagoon-side-hub.jpg by Karl Ostrosk on Unsplash
+             ikeja-library-cafe by Sai Zainalin Zn on Pexels
+             surulere-cafe by Bao Tran
+             vi-focus-desk by ranamatloob on Pexels
+             yaba-co-study by mart production on Pexels
+             lekki-garden by Sam on Unsplash
+             night-owl-space by Eagan Hou on Unsplash
+
+## Known Limitations
+ -Distances are fixed sample values.
   
 ## What's next
 
 - Keep saved spots after refresh as Week 3 item.
+- User rating and reviews.
   
