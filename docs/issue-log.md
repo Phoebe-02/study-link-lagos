@@ -12,3 +12,9 @@
    
       ## Issue log entry 5
       - Using the same code for App.jsx for FilterBar.jsx, Hence renaming itself
+     
+      ## Issue log entry 6
+      - The palette clashed and the site felt basic (feedback and observation), so I redesigned it
+
+      ## Issue log entry 7
+      - The import error, because filters.js was named filter.js
