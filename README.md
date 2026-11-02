@@ -88,4 +88,43 @@ See [docs/issue-log.md](docs/issue-log.md).
 
 - Keep saved spots after refresh as Week 3 item.
 - User rating and reviews.
+
+## Week 3
+ ## Scripts
+- `npm run dev` starts the app locally
+- `npm run build` creates the production build in `dist`
+- `npm test` runs the automated tests
+
+## Routes
+- `/` list of study spots with search and filters
+- `/spots/:id` detail page with facts, six rating categories and reviews
+- `/saved` the spots the user has saved
+- any other address shows a not-found page
+
+## Key decisions
+- **State lives in `App`.** The spots, filters and saved list are held in one place and passed down, so the list page and detail page always agree, and filters survive going to a detail page and back.
+- **Saved spots use `localStorage`.** They survive a refresh without needing a backend.
+- **Filters are defined once.** `filters.js` holds each filter's label and test, so adding a filter means adding one entry.
+- **Mock API.** Data is loaded from `spots.json` with loading, error (with retry) and empty states, so swapping in a real API later is a small change.
+- **Netlify redirect.** `public/_redirects` sends every address to the app, so direct links to a detail page work.
+
+## Known limitations
+- All places, ratings, reviews and distances are sample data, and photos are illustrative.
+- Distances are fixed sample values, not measured from the user's location.
+- Saved spots live only in the browser they were saved in.
+- No user accounts yet, so reviews cannot be added.
+- Only 4 tests: the detail page and routes are not covered by automated tests yet.
+
+## Testing
+Run `npm test` to run the 4 automated tests.
+
+![Terminal showing 4 tests passing](screenshots/tests-passing.png)
+
+## Accessibility
+Checked with Lighthouse (mobile, production build).
+
+- Home page: Accessibility 100, Best Practices 100, Performance 98, SEO 83 before fixing
+- Fixes: added a meta description and robots.txt (SEO), compressed photos (performance)
+- After: Accessibility 100, Best Practices 100, Performance 98, SEO 100 after fixing
+- Manual checks: keyboard-only walkthrough, 200% zoom, [axe or WAVE result]
   
